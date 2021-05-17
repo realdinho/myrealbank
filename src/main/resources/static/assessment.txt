@@ -1,0 +1,15 @@
+ASSEMENT
+1.       Prepare a batch job to consume the attached text file.
+2.       Prepare RESTFUL API to retrieve the records (from item #1).
+a.       Must have authentication
+b.       Must have pagination
+c.       Can search by customer ID or account number(s) or description
+
+Notes :-
+1.       Using Java Spring Boot.
+2.       Free to design the database structure.
+3.       Allowed to use many classes. (OOP is preferable)
+4.       Must follow RESTFUL API standard.
+5.       Code need to be shared.
+6.       Pls brief if you are using any Design pattern and why you choose it.
+7.       Documentation is required. (Class diagram and activity diagram)
