@@ -2,24 +2,36 @@ package com.realdiv.myrealbank.model;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "transaction")
 public class Transaction {
-//	private Customer customer; TODO:
-	private Long transactionId;
-	private String customerId;
-	private String accountNumber;
-//	private Account account; TODO:
-	private double amount;
-	private String description;
-	private Date date;
-	
 	@Id
+	@Column(name = "transaction_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long transactionId;
+	
+	@Column(name = "customer_id")
+	private String customerId;
+	
+	@Column(name = "account_number")
+	private String accountNumber;
+	
+	@Column(name = "amount")
+	private double amount;
+	
+	@Column(name = "description")
+	private String description;
+	
+	@Column(name = "date")
+	private Date date;
+		
 	public Long getTransactionId() {
 		return transactionId;
 	}

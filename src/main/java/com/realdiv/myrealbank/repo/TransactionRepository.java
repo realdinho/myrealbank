@@ -1,9 +1,15 @@
 package com.realdiv.myrealbank.repo;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.List;
+
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
 import com.realdiv.myrealbank.model.Transaction;
 
-public interface TransactionRepository extends JpaRepository<Transaction, Long> {
-
+@Repository
+public interface TransactionRepository extends CrudRepository<Transaction, Long> {
+	List<Transaction> findAll();         
+	Transaction findById(long id);
+	void save(List<Transaction> transaction);  
 }

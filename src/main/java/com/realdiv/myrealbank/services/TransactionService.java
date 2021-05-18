@@ -2,23 +2,20 @@ package com.realdiv.myrealbank.services;
 
 import java.util.List;
 
-import javax.transaction.Transactional;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import com.realdiv.myrealbank.model.Transaction;
 import com.realdiv.myrealbank.repo.TransactionRepository;
 
-@Service
-@Transactional
+@Component
 public class TransactionService {
 	@Autowired
-	private TransactionRepository repo;
+	TransactionRepository repo;
 	
 	public List<Transaction> find(String customerId, String accountNumber, String description) {
-//		TODO:
-        return repo.findAll();
+		// TODO:
+        return this.repo.findAll();
     }
 	
 	public List<Transaction> getAll() {
@@ -26,11 +23,15 @@ public class TransactionService {
     }
      
     public void save(Transaction transaction) {
-        repo.save(transaction);
+    	this.repo.save(transaction);
+    }
+    
+    public void saveAll(List<Transaction> transactions) {
+    	repo.save(transactions);
     }
      
     public Transaction get(long id) {
-        return repo.findById(id).get();
+        return repo.findById(id);
     }
      
     public void delete(long id) {
